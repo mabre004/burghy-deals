@@ -1,0 +1,45 @@
+{
+  "name": "burghy-deals",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.3.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "eslint": " eslint . --cache --cache-location node_modules/.cache/eslint --ext .js,.jsx,.ts,.tsx",
+    "eslint:fix": " eslint . --fix --cache --cache-location node_modules/.cache/eslint --ext .js,.jsx,.ts,.tsx",
+    "prettier": "prettier --check prettier.config.json \"./src/**/*.{js,ts,tsx,jsx,json,md,scss}\"",
+    "prettier:fix": "prettier --write prettier.config.json \"./src/**/*.{js,ts,tsx,jsx,json,md,scss}\"",
+    "precommit": "yarn prettier && yarn eslint",
+    "precommit:fix": "yarn eslint:fix && yarn prettier:fix"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.18.3",
+    "prettier": "^1.19.1"
+  }
+}
