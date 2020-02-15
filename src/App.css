@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
   pointer-events: none;
 }
 
@@ -35,4 +35,31 @@
   to {
     transform: rotate(360deg);
   }
+}
+.LoginBox {
+  height: 300px;
+  width: 50%;
+  align-items: center;
+  background-color: lightblue;
+}
+.Username {
+  text-align: center;
+  flex-direction: column;
+  margin-top: 2em;
+}
+.Password {
+  text-align: center;
+  flex-direction: column;
+}
+label {
+  font-size: 20px;
+  text-align: center;
+
+  color: black;
+}
+input {
+  height: 20px;
+  border-color: #282c34;
+  min-width: 28em;
+  border-radius: 7px;
 }
