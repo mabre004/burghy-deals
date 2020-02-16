@@ -30,12 +30,14 @@ class Login extends Component {
                     fontVariant: "small-caps",
 
                     color: "DarkSlateGray",
-                    marginLeft: "200px"
+                    marginLeft: "200px",
+                    marginTop: "240px"
                 }}>Welcome to BurghyDeals</p>
                 <div className="LoginBox" style={{
                     height: "300px",
                     width: "40%",
-                    marginLeft: "200px",
+                    marginLeft: "100px",
+                    marginBottom: "200px",
                     alignItems: "center",
                     backgroundColor: "transparent",
                     borderRadius: "12px"
@@ -43,7 +45,7 @@ class Login extends Component {
                     <div className="Email" style={{
                         texAlign: "left",
                         flexDirection: "column",
-                        marginTop: "2em"
+                        // marginTop: "1em"
                     }}>
 
                         {/* <div htmlFor="email"
