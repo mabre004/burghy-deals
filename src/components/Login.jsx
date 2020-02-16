@@ -27,32 +27,32 @@ class Login extends Component {
                     alignItems: "center",
                     backgroundColor: "lightblue"
                 }}>
-                    <div className="Username" style={{
+                    <div className="Email" style={{
                         texAlign: "left",
                         flexDirection: "column",
                         marginTop: "2em"
                     }}>
 
-                        <div htmlFor="username"
+                        <div htmlFor="email"
                             style={{
                                 fontSize: "15px",
                                 color: "#000000",
                                 // textAlign: "left",
-                                marginRight: "140px",
+                                marginRight: "260px",
                                 marginTop: "10px"
                             }}>
-                            Username: </div>
+                            Email: </div>
                         <input style={{
-                            height: "20px",
+                            height: "30px",
                             borderColor: "#282c34",
-                            width: "18em",
+                            width: "300px",
                             borderRadius: "7px",
                             // marginRight: "420px"
 
                         }}
                             type="text"
-                            name="username"
-                            placeholder="Enter your username"
+                            name="email"
+                            placeholder="Enter your email"
                         ></input>
                     </div>
                     <div className="Password" style={{
@@ -63,13 +63,13 @@ class Login extends Component {
                             fontSize: "15px",
                             color: "#000000",
                             // textAlign: "left",
-                            marginRight: "140px",
-                            marginTop: "10px"
+                            marginRight: "235px",
+                            marginTop: "15px"
                         }}> Password: </div>
                         <input style={{
-                            height: "20px",
+                            height: "30px",
                             borderColor: "#282c34",
-                            width: "18em",
+                            width: "300px",
                             borderRadius: "7px",
 
                         }}
@@ -80,8 +80,8 @@ class Login extends Component {
                     </div>
                     <div className="submit">
                         <button style={{
-                            height: "22px",
-                            width: "70px",
+                            height: "30px",
+                            width: "80px",
                             backgroundColor: "#ffffff",
                             color: "#000000",
                             borderRadius: "15px",
