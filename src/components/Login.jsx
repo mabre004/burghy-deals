@@ -13,8 +13,10 @@ class Login extends Component {
             backgroundSize: "cover"
         }}>
             <header className="App-header">
-                <p>Welcome to BurghyDeals</p>
+                <p1>Welcome to </p1>
+                <p1>BurghyDeals</p1>
                 <div className="LoginBox">
+
                     <div className="Email">
                         <input
                             type="text"
