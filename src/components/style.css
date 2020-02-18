@@ -1,0 +1,61 @@
+App{
+    text-align: center;
+   
+}
+.App-header{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+p{
+    font-size: 55px;
+    font-family: Didot, serif;
+    font-weight: normal;
+    font-variant: small-caps;
+    color: darkslategray;
+    margin-left: 200px;
+    margin-top: 240px;
+    
+}
+.LoginBox{
+    height: 300px;
+    width: 40%;
+    margin-left: 100px;
+    margin-bottom: 200px;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 12px;
+    
+}
+ /* .Email{
+    text-align: left;
+    flex-direction: column;
+} */
+.Password{
+    margin-top: 20px;
+} 
+button{
+    height: 40px;
+    width: 120px;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 40px;
+    border-color: #000000;
+    font-size: 18px;
+    margin-left: 250px;
+    margin-top: 20px;
+                        
+}
+
+input{
+    height: 50px;
+    width: 500px;
+    border-radius: 40px;
+    border-color: #282c34;
+    height: "50px";
+
+}
