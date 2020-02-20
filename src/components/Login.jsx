@@ -10,7 +10,8 @@ class Login extends Component {
     render() {
         return <div className="App" style={{
             backgroundImage: `url(${hands})`, backgroundPosition: "center",
-            backgroundSize: "cover"
+            backgroundSize: "cover",
+            
         }}>
             <header className="App-header">
                 <p1>Welcome to </p1>
