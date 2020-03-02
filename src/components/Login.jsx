@@ -2,12 +2,26 @@
 import React, { Component } from "react";
 export { Login } from "./Login";
 import hands from "./hand.png";
-import "./style.css";
+import "./styleLogin.css";
+// import Sell from "./Sell";
+import { Redirect } from "react-router-dom";
 
 
 class Login extends Component {
+    state = {
+        displayHandle: false,
+        redirect: ""
+    }
+    handleClick = () => {
 
+        // this.context.router.history.push("/sell")
+        this.setState({
+            redirect: "/sell"
+        })
+    }
     render() {
+
+
         return <div className="App" style={{
             backgroundImage: `url(${hands})`, backgroundPosition: "center",
             backgroundSize: "cover"
@@ -33,8 +47,10 @@ class Login extends Component {
                         ></input>
                     </div>
                     <div className="submit">
-                        <button > Submit </button>
+                        <button onClick={this.handleClick} label="Action"> Submit </button>
+
                     </div>
+                    {this.state.redirect ? <Redirect to={this.state.redirect} /> : null}
                     {/* <a
                         className="App-link"
                         href="https://plattsburgh.edu"
