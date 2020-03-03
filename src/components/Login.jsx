@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export { Login } from "./Login";
 import hands from "./hand.png";
 import "./styleLogin.css";
-// import Sell from "./Sell";
+
 import { Redirect } from "react-router-dom";
 
 
@@ -13,10 +13,8 @@ class Login extends Component {
         redirect: ""
     }
     handleClick = () => {
-
-        // this.context.router.history.push("/sell")
         this.setState({
-            redirect: "/sell"
+            redirect: "/register"
         })
     }
     render() {
