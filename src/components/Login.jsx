@@ -72,9 +72,7 @@ const Login = ({ history }) => {
         </div>
     );
 
-    // signUp(){
 
-    // }
 
 };
 export default withRouter(Login);
