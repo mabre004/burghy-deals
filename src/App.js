@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./components/Home";
@@ -7,19 +7,22 @@ import SignUp from "./components/Register";
 import { AuthProvider } from "./config/Auth";
 
 
-const App = () => {
-    return (
-        <AuthProvider>
-            <Router>
-                <div>
-                    <Route exact path="/" component={Home} />
-                    <Route path="/login" component={Login} />
-                    <Route path="/register" component={SignUp} />
-                    <Route path="/signup" component={SignUp} />
-                </div>
-            </Router>
-        </AuthProvider>
-    );
-};
+class App extends Component {
+    render() {
+        return (
+            <AuthProvider>
+                <Router>
+                    <div>
+                        <Route exact path="/" component={Login} />
+                        <Route path="/login" component={Login} />
+                        <Route path="/register" component={SignUp} />
+                        <Route path="/signup" component={SignUp} />
+                        <Route path="/home" component={Home} />
+                    </div>
+                </Router>
+            </AuthProvider>
+        );
+    }
+}
 
 export default App;

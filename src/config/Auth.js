@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import fireBase from "./fire";
 
-export const AuthContext = React.createContext();
+export var AuthContext = React.createContext();
 
 // eslint-disable-next-line react/prop-types
-export const AuthProvider = ({ children }) => {
+export var AuthProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState(null);
 
     useEffect(() => {
@@ -21,3 +21,5 @@ export const AuthProvider = ({ children }) => {
         </AuthContext.Provider>
     );
 };
+
+
