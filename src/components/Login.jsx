@@ -1,80 +1,80 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable import/first */
-import React, { Component } from "react";
+// eslint-disable-next-line no-unused-vars
+import React, { useCallback, useContext, Component } from "react";
 export { Login } from "./Login";
-import hands from "./hand.png";
+//import hands from "./hand";
 import "./styleLogin.css";
-import home from "./Home";
-import { Redirect } from "react-router-dom";
-// import fire from "../config/fire";
+// import home from "./Home";
+import { withRouter, Redirect } from "react-router";
+import fireBase from "../config/fire";
+import { AuthContext } from "../config/Auth";
 
 
-class Login extends Component {
-    
+// eslint-disable-next-line react/prop-types
+const Login = ({ history }) => {
+    const loginUser = useCallback(
+        async event => {
+            event.preventDefault();
+            const { email, password } = event.target.elements;
+            try {
+                await fireBase
+                    .auth()
+                    .signInWithEmailAndPassword(email.value, password.value);
+                // eslint-disable-next-line react/prop-types
+                history.push("/");
+            } catch (err) {
+                alert(err);
+            }
+        },
+        [history]
+    );
 
-    state = {
-        displayHandle: false,
-        redirect: ""
+    const { currentUser } = useContext(AuthContext);
+
+    if (currentUser) {
+        return <Redirect to="/" />;
     }
-    signupClick = () => {
-        this.setState({
-            redirect: "/register"
-        })
-    }
-    loginClick = () => {
-        this.setState({
-            redirect: "/home"
-        })
-    }
-    render() {
 
-
-        return <div className="App" style={{
-            backgroundImage: `url(${hands})`, backgroundPosition: "center",
-            backgroundSize: "cover",
+    return (
+        <div className="App" style={{
+            backgroundColor: "gray",
+            backgroundSize: "cover"
 
         }}>
-            <header className="App-header">
-                <p1>Welcome to </p1>
-                <p1>BurghyDeals</p1>
-                <div className="LoginBox">
+            {/* <h1>Log in</h1> */}
+            <form onSubmit={loginUser}>
+                <header className="App-header">
+                    <p1>Welcome to </p1>
+                    <p1>BurghyDeals</p1>
+                    <div className="LoginBox">
+                        <div className="Email">
 
-                    <div className="Email">
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="Enter your SUNY Plattsburgh email"
-                        ></input>
+                            <input
+                                name="email"
+                                type="email"
+                                placeholder="Enter your SUNY Plattsburgh email" />
+                        </div>
+                        <div className="Password" >
+
+                            <input
+                                name="password"
+                                type="password"
+                                placeholder="Enter your password" />
+                        </div>
+                        <button type="submit">Log in</button>
+                        <button onClick={() => history.push("/register")} label="Action">Create an account</button>
+
                     </div>
-                    <div className="Password" >
+                </header>
+            </form>
 
-                        <input
-                            type="password"
-                            name="password"
-                            placeholder="Enter your password"
-                        ></input>
-                    </div>
-                    <div className="submit">
-                        <button onClick={this.loginClick} label="Action"> LogIn </button>
-                        <button onClick={this.signupClick} label="Action"> SignUp </button>
+        </div>
+    );
 
-                    </div>
-                    {this.state.redirect ? <Redirect to={this.state.redirect} /> : null}
-                    {/* <a
-                        className="App-link"
-                        href="https://plattsburgh.edu"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{ color: "#61dafb" }}
-                    >
-                        Go to myPlattsburgh?
-        </a> */}
-                </div>
+    // signUp(){
 
+    // }
 
-            </header>
-        </div>;
-
-    }
-}
-
-export default Login;
+};
+export default withRouter(Login);

@@ -17,14 +17,14 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <h1>Welcome Home<h1>
-                    <button onClick={this.logout} label="Action"> logout </button>
-                    {this.state.redirect ? <Redirect to={this.state.redirect} /> : null}
+                <h1>Welcome Home</h1>
+                <button onClick={this.logout} label="Action"> logout </button>
+                {this.state.redirect ? <Redirect to={this.state.redirect} /> : null}
 
             </div >
 
 
-                    );
-                }
-            }
+        );
+    }
+}
 export default Home;
