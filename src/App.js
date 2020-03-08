@@ -1,39 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 // import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';//yarn add react-router-dom
-import Login from './components/Login';
-import Register from './components/Register';
-import Home from './components/Home';
-import fire from "./config/fire";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";//yarn add react-router-dom
+
+import Login from "./components/Login";
+import Register from "./components/Register";
+import Home from "./components/Home";
+
+
+
 
 
 class App extends Component {
 
-    constructor(props) {
-        super(props);
-        this.setState = {
-            user: {},
-        }
-    }
-    componentDidMount() {
-        this.authListner();
-    }
 
-    authListner() {
-        fire.auth().onAuthStateChanged((user) => {
-
-            if (user) {
-                this.setState({ user });
-
-            }
-            else {
-                this.setState({ user: null });
-
-            }
-        }
-
-        );
-    }
     render() {
         return (
             <div>
@@ -52,5 +31,6 @@ class App extends Component {
         );
     }
 }
-
 export default App;
+
+// export default App;

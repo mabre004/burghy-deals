@@ -5,33 +5,11 @@ import hands from "./hand.png";
 import "./styleLogin.css";
 import home from "./Home";
 import { Redirect } from "react-router-dom";
-import fire from "../config/fire";
+// import fire from "../config/fire";
 
 
 class Login extends Component {
-    // constructor(props) {
-    //     super(props);
-    //     this.loginClick = this.loginClick.bind(this);
-    //     this.signupClick = this.signupClick.bind(this);
-    //     this.state = {
-    //         email: '',
-    //         password: ''
-    //     }
-    // }
-    // loginClick(e) {
-    //     e.preventDefault();
-    //     fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u) => {
-    //     }).catch((error) => {
-    //         console.log(error);
-    //     });
-    // }
-    // signupClick(e) {
-    //     e.preventDefault();
-    //     fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-    //         .catch((error) => {
-    //             console.log(error);
-    //         });
-    // }
+    
 
     state = {
         displayHandle: false,
@@ -100,4 +78,3 @@ class Login extends Component {
 }
 
 export default Login;
-
