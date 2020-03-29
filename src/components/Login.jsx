@@ -3,7 +3,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useCallback, useContext, Component } from "react";
 export { Login } from "./Login";
-//import hands from "./hand";
+import hands from "./hand.png";
 import "./styleLogin.css";
 // import home from "./Home";
 import { withRouter, Redirect } from "react-router";
@@ -38,8 +38,10 @@ const Login = ({ history }) => {
 
     return (
         <div className="App" style={{
-            backgroundColor: "gray",
+            backgroundImage: `url(${hands})`, backgroundPosition: "center",
             backgroundSize: "cover"
+            // backgroundColor: "gray",
+            // backgroundSize: "cover"
 
         }}>
             {/* <h1>Log in</h1> */}

@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable import/first */
 // eslint-disable-next-line no-unused-vars
 import React, { useCallback, useContext, Component } from "react";
-//import hands from "./hand";
+import hands from "./hand.png";
 import "./styleReg.css";
 import { withRouter, Redirect } from "react-router";
 import fireBase from "../config/fire";
@@ -35,7 +36,7 @@ const Register = ({ history }) => {
 
   return (
     <div className="App" style={{
-      backgroundColor: "gray",
+      backgroundImage: `url(${hands})`, backgroundPosition: "center",
       backgroundSize: "cover"
 
     }}>
@@ -60,6 +61,9 @@ const Register = ({ history }) => {
                 placeholder="Enter your password" />
             </div>
             <button type="submit">Create account</button>
+            <button style={{ width: "300px" }} onClick={() => history.push("/login")} label="Action">Already have an account? LogIn</button>
+
+
           </div>
         </header>
       </form>
