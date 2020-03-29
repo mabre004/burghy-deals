@@ -16,7 +16,7 @@ p1{
     font-family: Didot, serif;
     font-weight: normal;
     font-variant: small-caps;
-    color: rgb(74, 197, 177);
+    color: darksalmon;
     
     text-align: center;
     
@@ -58,5 +58,6 @@ input{
     border-radius: 40px;
     border-color: #282c34;
     height: "50px";
-
+    font-size: medium;
+    
 }

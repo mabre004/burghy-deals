@@ -1,0 +1,25 @@
+[debug] [2020-03-07T08:19:14.552Z] ----------------------------------------------------------------------
+[debug] [2020-03-07T08:19:14.554Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2020-03-07T08:19:14.554Z] CLI Version:   7.14.0
+[debug] [2020-03-07T08:19:14.554Z] Platform:      darwin
+[debug] [2020-03-07T08:19:14.554Z] Node Version:  v12.13.0
+[debug] [2020-03-07T08:19:14.555Z] Time:          Sat Mar 07 2020 03:19:14 GMT-0500 (Eastern Standard Time)
+[debug] [2020-03-07T08:19:14.555Z] ----------------------------------------------------------------------
+[debug] [2020-03-07T08:19:14.555Z] 
+[debug] [2020-03-07T08:19:14.565Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-03-07T08:19:14.566Z] > authorizing via signed-in user
+[debug] [2020-03-07T08:19:14.566Z] [iam] checking project signup-burghy for permissions ["firebase.projects.get"]
+[debug] [2020-03-07T08:19:14.567Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/signup-burghy:testIamPermissions  
+
+[debug] [2020-03-07T08:19:14.882Z] <<< HTTP RESPONSE 200
+[debug] [2020-03-07T08:19:14.884Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/signup-burghy  
+ 
+[debug] [2020-03-07T08:19:15.186Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/amir/coding-projects/burghy-deals'...
+[info] 
+[debug] [2020-03-07T08:19:15.189Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/signup-burghy/webApps/-/config  
+ 
+[debug] [2020-03-07T08:19:15.596Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: build
+[info] ✔  hosting: Local server: http://localhost:5000
