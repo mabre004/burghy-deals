@@ -1,7 +1,7 @@
 /* eslint-disable import/first */
 import React, { Component } from "react";
 import fireBase from "../config/fire";
-import { Redirect } from "react-router-dom";
+import { withRouter, Redirect } from "react-router-dom";
 import "./styleSell.css";
 
 class Sell extends Component {
@@ -9,42 +9,49 @@ class Sell extends Component {
         displayHandle: false,
         redirect: ""
     }
-    // logout = () => {
-    //     fireBase.auth().signOut()
-    //     this.setState({
-    //         redirect: "/login"
-    //     })
-    // }
+    postItem = () => {
+        this.setState({
+            redirect: "/home"
+        })
+    }
+
+
     render() {
         return (
-            <div className="SellPage" style={{
-                backgroundColor: "lightgrey",
-                backgroundSize: "cover", height: "100%"
+            <div className="App" style={{
+                backgroundColor: "grey",
             }}>
-                <h3>Sell Page</h3>
-                <div className="Photo">
-                    <h1>
-                        Choose the photo of your deal
-                    </h1>
+                <div className="App-header">
+                    <p1>Sell Page </p1>
 
-                    <input
+                    <div className="Photo">
+                        <h6>
+                            Choose the photo of your deal
+                    </h6>
 
-                        type="file"
-                        name="image"
-                    />
-                </div>
-                <div className="Name">
-                    <input
-                        type="text"
-                        placeholder="Enter the name of your item"
-                    />
-                </div>
-                <div>
-                    <button> Post Item </button>
+                        <input style={{ borderRadius: "0px" }}
+
+                            type="file"
+                            name="image"
+                        />
+                    </div>
+                    <div className="Name">
+                        <input
+                            type="text"
+                            placeholder="Enter the name of your item"
+                        />
+                    </div>
+                    <div>
+
+                        <button onClick={this.postItem} label="Action">post item</button>
+                        {this.state.redirect ? <Redirect to={this.state.redirect} /> : null}
+                    </div>
                 </div>
 
-            </div >
+
+            </div>
+
         );
     }
 }
-export default Sell;
+export default withRouter(Sell);
