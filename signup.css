@@ -45,13 +45,30 @@ button{
 .signup-btn:hover{
     background-color: #3366A5;
 }
+
+.choose-file-btn{
+    background-color: #3366A5;
+    width: 80%;
+    padding: 10px;
+    border-radius: 20px;
+    font-size:15px;
+    margin:10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.choose-file-btn:hover{
+    background-color: #DF9725;
+}
+
 a{
     text-decoration: none;
 }
 
 hr{
     margin-top: 20px;
-    width: 80%;
+    width: 100%;
 }
 .or{
     background: #fff;
@@ -61,4 +78,10 @@ hr{
 img{
     width: 80px;
     margin-top:-70px;
+}
+
+.choose-pic{
+    background: #fff;
+    width:160px;
+    margin: -19px auto 10px;
 }
