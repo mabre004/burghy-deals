@@ -13,15 +13,16 @@ body {
     padding: 30px;
     margin: 8% auto 0;
     text-align: center;
+    border-radius: 40px;
 
 }
 .sign-up-form h1{
     color: #3366A5;
-    margin-botton:30px;
+    margin-bottom:30px;
 }
 .input-box{
     border-radius: 20px;
-    padding: 10px;
+    padding: 8px;
     margin: 10px 0;
     width: 100%;
     border: 1px solid #999;
@@ -41,6 +42,9 @@ button{
 .signup-btn{
     background-color: #DF9725;
 }
+.signup-btn:hover{
+    background-color: #3366A5;
+}
 a{
     text-decoration: none;
 }
@@ -56,5 +60,5 @@ hr{
 }
 img{
     width: 80px;
-    margin-top:-50px;
+    margin-top:-70px;
 }
