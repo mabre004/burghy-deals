@@ -6,7 +6,7 @@ body {
     background-size: cover;
     background-position: center;
 }
-.sign-up-form{
+.log-in-form{
     width: 350px;
     box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
     background: #fff;
@@ -16,7 +16,7 @@ body {
     border-radius: 40px;
 
 }
-.sign-up-form h1{
+.log-in-form h1{
     color: #3366A5;
     margin-bottom:30px;
 }
@@ -39,19 +39,17 @@ button{
     outline: none;
     cursor: pointer;
 }
-.login-btn{
+.signup-btn{
     background-color: #DF9725;
 }
-.login-btn:hover{
-    background-color: #3366A5;
-}
-
-.signup-btn{
-    background-color: #3366A5;
-
-}
 .signup-btn:hover{
-    background-color: #DF9725;;
+    background-color: #3366A5;
+}
+.login-btn{
+    background-color: #3366A5;
+}
+.login-btn:hover{
+    background-color: #DF9725;
 }
 
 a{
