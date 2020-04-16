@@ -4,19 +4,42 @@ import fireBase from "../config/fire";
 import { withRouter, Redirect } from "react-router-dom";
 import logo_burghy from "./logo_burghy1.png";
 import "./styleHome.css";
-
+import fire from "firebase";
 class Home extends Component {
     state = {
         displayHandle: false,
-        redirect: ""
+        redirect: "",
+        data: null
     }
+
+
     logout = () => {
         fireBase.auth().signOut()
         this.setState({
             redirect: "/login"
         })
     }
+    sellPage = () => {
+
+        this.setState({
+            redirect: "/sell"
+        })
+
+    }
+
+
     render() {
+        const db = fire.firestore();
+        db.collection("photos").get().then(function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+                // doc.data() is never undefined for query doc snapshots
+                console.log(doc.id, " => ", doc.data());
+                // this.setState({ data: doc.data() })
+            });
+
+        });
+        let dataUI = this.state.data ? <h1>No Data</h1> : <pre>{JSON.stringify(this.state.data)}</pre>;
+
         return (
             <div>
                 <h1>Welcome Home</h1>
@@ -50,7 +73,17 @@ class Home extends Component {
                             </li>
                         </ul>
                     </div>
-                    <button onClick={this.logout} label="Action"> logout </button>
+                    <div>
+                        <h1>UI Data</h1>
+                        {dataUI}
+                    </div>
+
+                    <button onClick={this.logout}
+                        style={{ marginLeft: "1200px" }}
+                        label="Action"> logout </button>
+                    <button onClick={this.sellPage}
+                        style={{ marginLeft: "1200px" }}
+                        label="Action"> Sellpage </button>
                     {this.state.redirect ? <Redirect to={this.state.redirect} /> : null}
                 </div>
 
