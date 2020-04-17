@@ -12,7 +12,8 @@ class Sell extends Component {
         image: null,
         name: "",
         number: null,
-        email: ""
+        email: "",
+        description: ""
     }
     handleChange = e => {
         if (e.target.files[0]) {
@@ -32,7 +33,8 @@ class Sell extends Component {
             name: this.state.name,
             phone_number: this.state.number,
             email: this.state.email,
-            image: this.state.image
+            image: this.state.image,
+            description: this.state.description
 
         }).then(function () {
             console.log("Document successfully written!");
@@ -98,6 +100,21 @@ class Sell extends Component {
                             onChange={(event) => {
                                 this.setState({
                                     email: event.target.value
+                                })
+                            }}
+                        />
+                    </div>
+                    <div className="Description">
+                        <input
+                            style={{ height: "100px", width: "900px" }}
+                            value={this.state.description}
+                            name="descripltion"
+                            type="text"
+                            placeholder="Please enter a brief description of your item for buyers. 
+                            How old it is? Where it's currently located, and your expected sell price.."
+                            onChange={(event) => {
+                                this.setState({
+                                    description: event.target.value
                                 })
                             }}
                         />
