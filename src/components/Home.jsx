@@ -40,17 +40,20 @@ class Home extends Component {
                 const photolist = document.querySelector('#photoList');
                 const photolist1 = document.querySelector('#photosData');
                 let li = document.createElement('li');
+                let space = document.createElement('div');
                 let name = document.createElement('span');
                 let email = document.createElement('div');
                 let phone = document.createElement('div');
                 let image = document.createElement('div');
                 let description = document.createElement('div');
                 li.setAttribute('data-id', doc.id);
+                space.textContent = doc.data().space;
                 name.textContent = doc.data().name;
                 email.textContent = doc.data().email;
                 phone.textContent = doc.data().phone_number;
                 image.textContent = doc.data().image;
-                description.textContent = doc.data().description
+                description.textContent = doc.data().description;
+                li.appendChild(space);
                 li.appendChild(name);
                 li.appendChild(email);
                 li.appendChild(phone);
@@ -115,7 +118,13 @@ class Home extends Component {
                     </div>
                     <div>
                         <h1 id={"photoList"}>UI Data</h1>
-                        <h3 id={"photosData"}></h3>
+                        <div style={{
+                            fontFamily: "Times New Roman",
+                            fontSize: "28px",
+                            marginLeft: "50px",
+                            wordSpacing: "5px"
+
+                        }} id={"photosData"}></div>
                         {/* {this.state.data} */}
 
                     </div>

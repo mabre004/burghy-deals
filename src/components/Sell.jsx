@@ -13,13 +13,11 @@ class Sell extends Component {
         name: "",
         number: null,
         email: "",
-        description: ""
+        description: "",
+        space: ""
     }
     handleChange = e => {
-        if (e.target.files[0]) {
-            const image = e.target.files[0];
-            this.setState(() => ({ image }));
-        }
+
     };
 
     postItem = () => {
@@ -30,6 +28,7 @@ class Sell extends Component {
         const db = firebase.firestore()
         // db.collection("photos").doc("firstPhoto").set({
         db.collection("photos").doc().set({
+            space: this.state.space,
             name: this.state.name,
             phone_number: this.state.number,
             email: this.state.email,
@@ -71,11 +70,13 @@ class Sell extends Component {
                             name="name"
                             type="text"
                             placeholder="Enter the name of your item"
+                            required
                             onChange={(event) => {
                                 this.setState({
                                     name: event.target.value
                                 })
                             }}
+
                         />
                     </div>
                     <div className="Phone">
