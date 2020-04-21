@@ -42,6 +42,11 @@ class Sell extends Component {
                 window.alert("Error writing document: ", error);
             });
     }
+    homepage = () => {
+        this.setState({
+            redirect: "/home"
+        })
+    }
 
 
     render() {
@@ -123,6 +128,9 @@ class Sell extends Component {
                     <div>
 
                         <button onClick={this.postItem} label="Action">post item</button>
+                        <button onClick={this.homepage} label="Action"
+                            style={{ width: "200px" }}
+                        >Back to home</button>
                         {this.state.redirect ? <Redirect to={this.state.redirect} /> : null}
                     </div>
                 </div>

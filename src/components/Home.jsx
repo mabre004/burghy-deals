@@ -31,57 +31,89 @@ class Home extends Component {
     }
 
 
-    onLoad = (e) => {
+    // onLoad = (e) => {
+    //     const db = fire.firestore();
+    //     db.collection("photos").get().then(function (querySnapshot) {
+    //         querySnapshot.forEach(function (doc) {
+    //             // doc.data() is never undefined for query doc snapshots
+    //             console.log(doc.id, " => ", doc.data());
+    //             const photolist = document.querySelector('#photoList');
+    //             const photolist1 = document.querySelector('#photosData');
+    //             let li = document.createElement('li');
+    //             let space = document.createElement('div');
+    //             let name = document.createElement('span');
+    //             let email = document.createElement('div');
+    //             let phone = document.createElement('div');
+    //             let image = document.createElement('div');
+    //             let description = document.createElement('div');
+    //             li.setAttribute('data-id', doc.id);
+    //             space.textContent = doc.data().space;
+    //             name.textContent = doc.data().name;
+    //             email.textContent = doc.data().email;
+    //             phone.textContent = doc.data().phone_number;
+    //             image.textContent = doc.data().image;
+    //             description.textContent = doc.data().description;
+    //             li.appendChild(space);
+    //             li.appendChild(name);
+    //             li.appendChild(email);
+    //             li.appendChild(phone);
+    //             // li.appendChild(image);
+    //             li.appendChild(description);
+    //             // photolist.appendChild(li);
+    //             photolist1.appendChild(li)
+    //             // this.setState({ data: doc.data() })
+    //         });
+
+    //     });
+
+
+    // }
+    // renderPhotos = (doc) => {
+    //     const photolist = document.querySelector('#photoList');
+    //     let li = document.createElement('li');
+    //     let name = document.createElement('span');
+    //     li.setAttribute('data-id', doc.id);
+    //     name.textContent = doc.data().name;
+    //     li.appendChild(name);
+    //     photolist.appendChild(li);
+
+    // }
+
+    render() {
         const db = fire.firestore();
         db.collection("photos").get().then(function (querySnapshot) {
             querySnapshot.forEach(function (doc) {
                 // doc.data() is never undefined for query doc snapshots
                 console.log(doc.id, " => ", doc.data());
-                const photolist = document.querySelector('#photoList');
-                const photolist1 = document.querySelector('#photosData');
-                let li = document.createElement('li');
-                let space = document.createElement('div');
-                let name = document.createElement('span');
-                let email = document.createElement('div');
-                let phone = document.createElement('div');
-                let image = document.createElement('div');
-                let description = document.createElement('div');
-                li.setAttribute('data-id', doc.id);
-                space.textContent = doc.data().space;
-                name.textContent = doc.data().name;
-                email.textContent = doc.data().email;
-                phone.textContent = doc.data().phone_number;
-                image.textContent = doc.data().image;
-                description.textContent = doc.data().description;
-                li.appendChild(space);
-                li.appendChild(name);
-                li.appendChild(email);
-                li.appendChild(phone);
-                // li.appendChild(image);
-                li.appendChild(description);
-                // photolist.appendChild(li);
-                photolist1.appendChild(li)
-                // this.setState({ data: doc.data() })
+                // const photolist = document.querySelector('#photoList');
+                // const photolist1 = document.querySelector('#photosData');
+                // let li = document.createElement('li');
+                // let space = document.createElement('div');
+                // let name = document.createElement('span');
+                // let email = document.createElement('div');
+                // let phone = document.createElement('div');
+                // let image = document.createElement('div');
+                // let description = document.createElement('div');
+                // li.setAttribute('data-id', doc.id);
+                // space.textContent = doc.data().space;
+                // name.textContent = doc.data().name;
+                // email.textContent = doc.data().email;
+                // phone.textContent = doc.data().phone_number;
+                // image.textContent = doc.data().image;
+                // description.textContent = doc.data().description;
+                // li.appendChild(space);
+                // li.appendChild(name);
+                // li.appendChild(email);
+                // li.appendChild(phone);
+                // // li.appendChild(image);
+                // li.appendChild(description);
+                // // photolist.appendChild(li);
+                // photolist1.appendChild(li)
+                // // this.setState({ data: doc.data() })
             });
 
         });
 
-
-    }
-    renderPhotos = (doc) => {
-        const photolist = document.querySelector('#photoList');
-        let li = document.createElement('li');
-        let name = document.createElement('span');
-        li.setAttribute('data-id', doc.id);
-        name.textContent = doc.data().name;
-        li.appendChild(name);
-        photolist.appendChild(li);
-
-    }
-
-    render() {
-
-        //let dataUI = this.state.data ? <h1>No Data</h1> : <pre>{JSON.stringify(this.state.data)}</pre>;
 
         return (
             <div>
@@ -128,7 +160,7 @@ class Home extends Component {
                         {/* {this.state.data} */}
 
                     </div>
-                    <button onClick={this.onLoad}>Load Data</button>
+                    {/* <button onClick={this.onLoad}>Load Data</button> */}
                     <button onClick={this.logout}
                         style={{ marginLeft: "1200px" }}
                         label="Action"> logout </button>
