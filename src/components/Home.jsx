@@ -85,31 +85,40 @@ class Home extends Component {
             querySnapshot.forEach(function (doc) {
                 // doc.data() is never undefined for query doc snapshots
                 console.log(doc.id, " => ", doc.data());
-                // const photolist = document.querySelector('#photoList');
-                // const photolist1 = document.querySelector('#photosData');
-                // let li = document.createElement('li');
-                // let space = document.createElement('div');
-                // let name = document.createElement('span');
-                // let email = document.createElement('div');
-                // let phone = document.createElement('div');
-                // let image = document.createElement('div');
-                // let description = document.createElement('div');
-                // li.setAttribute('data-id', doc.id);
-                // space.textContent = doc.data().space;
-                // name.textContent = doc.data().name;
-                // email.textContent = doc.data().email;
-                // phone.textContent = doc.data().phone_number;
-                // image.textContent = doc.data().image;
-                // description.textContent = doc.data().description;
-                // li.appendChild(space);
-                // li.appendChild(name);
-                // li.appendChild(email);
-                // li.appendChild(phone);
-                // // li.appendChild(image);
-                // li.appendChild(description);
-                // // photolist.appendChild(li);
-                // photolist1.appendChild(li)
-                // // this.setState({ data: doc.data() })
+                const photolist = document.querySelector('#photoList');
+                const photolist1 = document.querySelector('#photosData');
+                let li = document.createElement('li');
+                let space = document.createElement('div');
+                let name = document.createElement('div');
+                let condition = document.createElement('div');
+                let price = document.createElement('div');
+                let location = document.createElement('div');
+                let email = document.createElement('div');
+                let phone = document.createElement('div');
+                let image = document.createElement('div');
+                let description = document.createElement('div');
+                li.setAttribute('data-id', doc.id);
+                space.textContent = doc.data().space;
+                name.textContent = "Item Name=> " + doc.data().name;
+                condition.textContent = "Item condition=> " + doc.data().condition;
+                price.textContent = "Item price=> " + doc.data().price;
+                location.textContent = "Item Location=> " + doc.data().location;
+                email.textContent = "Seller's email=> " + doc.data().email;
+                phone.textContent = "Seller's Phone number=> " + doc.data().phone_number;
+                image.textContent = doc.data().image;
+                description.textContent = doc.data().description;
+                li.appendChild(space);
+                li.appendChild(name);
+                li.appendChild(condition);
+                li.appendChild(price);
+                li.appendChild(location);
+                li.appendChild(email);
+                li.appendChild(phone);
+                // li.appendChild(image);
+                li.appendChild(description);
+                // photolist.appendChild(li);
+                photolist1.appendChild(li)
+                // this.setState({ data: doc.data() })
             });
 
         });

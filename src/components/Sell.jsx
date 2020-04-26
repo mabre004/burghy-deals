@@ -14,7 +14,11 @@ class Sell extends Component {
         number: null,
         email: "",
         description: "",
-        space: ""
+        space: "",
+        condition: "",
+        location: "",
+        price: ""
+
     }
     handleChange = e => {
 
@@ -32,6 +36,9 @@ class Sell extends Component {
             name: this.state.name,
             phone_number: this.state.number,
             email: this.state.email,
+            condition: this.state.condition,
+            price: this.state.price,
+            location: this.state.location,
             image: this.state.image,
             description: this.state.description
 
@@ -75,10 +82,55 @@ class Sell extends Component {
                             name="name"
                             type="text"
                             placeholder="Enter the name of your item"
-                            required
+
                             onChange={(event) => {
                                 this.setState({
                                     name: event.target.value
+                                })
+                            }}
+
+                        />
+                    </div>
+                    <div className="condition">
+                        <input
+                            value={this.state.condition}
+                            name="condition"
+                            type="text"
+                            placeholder="Condition"
+
+                            onChange={(event) => {
+                                this.setState({
+                                    condition: event.target.value
+                                })
+                            }}
+
+                        />
+                    </div>
+                    <div className="price">
+                        <input
+                            value={this.state.Price}
+                            name="price"
+                            type="number"
+                            placeholder="Price"
+
+                            onChange={(event) => {
+                                this.setState({
+                                    price: event.target.value
+                                })
+                            }}
+
+                        />
+                    </div>
+                    <div className="location">
+                        <input
+                            value={this.state.Location}
+                            name="location"
+                            type="text"
+                            placeholder="Location on campus"
+
+                            onChange={(event) => {
+                                this.setState({
+                                    location: event.target.value
                                 })
                             }}
 
