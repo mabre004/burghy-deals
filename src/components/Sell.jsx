@@ -47,6 +47,7 @@ class Sell extends Component {
         })
             .catch(function (error) {
                 window.alert("Error writing document: ", error);
+                console.log(error);
             });
     }
     homepage = () => {

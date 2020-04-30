@@ -43,12 +43,7 @@ button{
                         
 }
 
-/* input{
-    height: 50px;
-    width: 500px;
-    border-radius: 40px;
-    border-color: #282c34;
-    height: "50px";
-    font-size: medium;
+input{
+    padding: 20;
     
-} */
+}

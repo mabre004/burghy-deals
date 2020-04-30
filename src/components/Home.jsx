@@ -116,8 +116,10 @@ class Home extends Component {
                 li.appendChild(phone);
                 // li.appendChild(image);
                 li.appendChild(description);
+                if (document.querySelector('#photosData')) { photolist1.appendChild(li) }
+
                 // photolist.appendChild(li);
-                photolist1.appendChild(li)
+
                 // this.setState({ data: doc.data() })
             });
 
