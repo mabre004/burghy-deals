@@ -88,6 +88,7 @@ class Home extends Component {
                 const photolist = document.querySelector('#photoList');
                 const photolist1 = document.querySelector('#photosData');
                 let li = document.createElement('li');
+
                 let space = document.createElement('div');
                 let name = document.createElement('div');
                 let condition = document.createElement('div');
@@ -95,7 +96,7 @@ class Home extends Component {
                 let location = document.createElement('div');
                 let email = document.createElement('div');
                 let phone = document.createElement('div');
-                let image = document.createElement('div');
+                let image = document.createElement('a');
                 let description = document.createElement('div');
                 li.setAttribute('data-id', doc.id);
                 space.textContent = doc.data().space;
@@ -114,7 +115,30 @@ class Home extends Component {
                 li.appendChild(location);
                 li.appendChild(email);
                 li.appendChild(phone);
-                // li.appendChild(image);
+                // var a = document.createElement('a');
+                // var linkText = document.createTextNode("item photo");
+                // a.appendChild(linkText);
+                // a.title = "item photo";
+                // a.href = doc.data().image;
+                // li.appendChild(a);
+                li.appendChild(space);
+                li.appendChild(space);
+                var img = document.createElement('img');
+                var linkText = document.createTextNode("item photo");
+                img.appendChild(linkText);
+                img.title = "item photo";
+                img.src = doc.data().image;
+                img.height = 320;
+                img.width = 250;
+                li.appendChild(img);
+
+                li.appendChild(name);
+                li.appendChild(condition);
+                li.appendChild(price);
+                li.appendChild(location);
+                li.appendChild(email);
+                li.appendChild(phone);
+
                 li.appendChild(description);
                 if (document.querySelector('#photosData')) { photolist1.appendChild(li) }
 
@@ -160,7 +184,7 @@ class Home extends Component {
                         </ul>
                     </div>
                     <div>
-                        <h1 id={"photoList"}>UI Data</h1>
+                        <div id={"photoList"}>UI Data</div>
                         <div style={{
                             fontFamily: "Times New Roman",
                             fontSize: "28px",

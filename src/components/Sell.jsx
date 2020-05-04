@@ -9,7 +9,8 @@ class Sell extends Component {
     state = {
         displayHandle: false,
         redirect: "",
-        image: null,
+        image: '',
+
         name: "",
         number: null,
         email: "",
@@ -20,10 +21,23 @@ class Sell extends Component {
         price: ""
 
     }
-    handleChange = e => {
+    handleClick = () => {
+        const file = document.querySelector("#photo").files[0]
+        const storageRef = firebase.storage().ref()
+        const ref = storageRef.child('images')
+        const name = new Date() + '-' + file.name
 
-    };
+        var blob = new Blob([file], { type: "image/jpeg" });
 
+        const task = ref.child(name).put(blob)
+        task
+            .then(snapshot => snapshot.ref.getDownloadURL())
+            .then(url => {
+                console.log(url)
+                this.setState({ image: url })
+            })
+            .catch(err => console.error('error uploading file', err))
+    }
     postItem = () => {
         this.setState({
             redirect: "/home"
@@ -71,11 +85,15 @@ class Sell extends Component {
                     </h6>
 
                         <input style={{ borderRadius: "0px" }}
-                            value={this.state.image}
+                            // value={this.state.image}
                             type="file"
-                            name="image"
-                            onChange={(event) => { this.setState({ image: event.target.value }) }}
+                            id="photo"
+                        // onChange={(event) => { this.setState({ image: event.target.value }) }}
+
                         />
+                        <span>
+                            <button onClick={this.handleClick}> uploadImage</button>
+                        </span>
                     </div>
                     <div className="name">
                         <input
