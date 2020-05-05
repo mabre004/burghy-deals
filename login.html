@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Log In</title>
+
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
@@ -11,17 +12,35 @@
     <img src="user-icn.png">
     <h1>Welcome to <br>Burghy Deals</h1>
     <form action="/submit-sign-up-form">
-        <input type="email" class="input-box" placeholder="Your Email" required>
-        <input type="password" class="input-box" placeholder="Your Password" required>
-        <button type="button" class="login-btn">Log In</button>
+        <input type="email" class="input-box" id="email" placeholder="Your Email" required>
+        <input type="password" class="input-box" id="password" placeholder="Your Password" required>
+        <button type="button" class="login-btn" onclick="logIn()">Log In</button>
         <hr>
         <p class="or">OR</p>
         <p>Want to Create an account?</p>
-        <button type="button" class="signup-btn"><a href="signup.html">Sign Up</a></button>
+        <button type="button" class="signup-btn" onclick="signup()"><a href="signup.html">Sign Up</a></button>
+        <hr>
+        <p class="about_us"><a href="About.html">About Us</a></p>
 
 
     </form>
 </div>
-
+<script src="login.js"></script>>
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+    apiKey: "AIzaSyCsn1FV9sfK21BVRWZoIWG_wyLpv3SG7Qc",
+    authDomain: "burghydeals-78517.firebaseapp.com",
+    databaseURL: "https://burghydeals-78517.firebaseio.com",
+    projectId: "burghydeals-78517",
+    storageBucket: "burghydeals-78517.appspot.com",
+    messagingSenderId: "1087497557976",
+    appId: "1:1087497557976:web:e2fda5602eaae7570504ad",
+    measurementId: "G-4J9Z4JJ15E"
+};
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+</script>
 </body>
 </html>

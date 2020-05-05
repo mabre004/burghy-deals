@@ -43,13 +43,29 @@ button{
     background-color: #DF9725;
 }
 .signup-btn:hover{
-    background-color: #3366A5;
+    transform: scale(1.1);
+    animation-name: signup-animation-btn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes signup-animation-btn{
+    100%{
+        background-color: #D9A557;
+    }
 }
 .login-btn{
     background-color: #3366A5;
 }
 .login-btn:hover{
-    background-color: #DF9725;
+    transform: scale(1.1);
+    animation-name: login-animation-btn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes login-animation-btn{
+    100%{
+        background-color: #5C84AD;
+    }
 }
 
 a{
@@ -64,6 +80,12 @@ hr{
     background: #fff;
     width:30px;
     margin: -19px auto 10px;
+}
+
+.about_us{
+    background: #fff;
+    width: 80px;
+    margin:-19px auto 10px;
 }
 img{
     width: 80px;
