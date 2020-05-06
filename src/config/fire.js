@@ -1,16 +1,17 @@
+/* eslint-disable no-undef */
 import * as firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/storage";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAFWTl8C_3HeY-Q21FZXP3USTvyJKN2sdk",
-    authDomain: "burghydeals-71334.firebaseapp.com",
-    databaseURL: "https://burghydeals-71334.firebaseio.com",
-    projectId: "burghydeals-71334",
-    storageBucket: "burghydeals-71334.appspot.com",
-    messagingSenderId: "355898713780",
-    appId: "1:355898713780:web:6e09f7fd22ace9202a99e1",
-    measurementId: "G-0TFFFM7HT6"
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    databaseURL: process.env.REACT_APP_databaseURL,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId,
+    measurementId: process.env.REACT_APP_measurementId
 };
 const fireBase = firebase.initializeApp(firebaseConfig);
 

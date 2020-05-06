@@ -31,53 +31,6 @@ class Home extends Component {
     }
 
 
-    // onLoad = (e) => {
-    //     const db = fire.firestore();
-    //     db.collection("photos").get().then(function (querySnapshot) {
-    //         querySnapshot.forEach(function (doc) {
-    //             // doc.data() is never undefined for query doc snapshots
-    //             console.log(doc.id, " => ", doc.data());
-    //             const photolist = document.querySelector('#photoList');
-    //             const photolist1 = document.querySelector('#photosData');
-    //             let li = document.createElement('li');
-    //             let space = document.createElement('div');
-    //             let name = document.createElement('span');
-    //             let email = document.createElement('div');
-    //             let phone = document.createElement('div');
-    //             let image = document.createElement('div');
-    //             let description = document.createElement('div');
-    //             li.setAttribute('data-id', doc.id);
-    //             space.textContent = doc.data().space;
-    //             name.textContent = doc.data().name;
-    //             email.textContent = doc.data().email;
-    //             phone.textContent = doc.data().phone_number;
-    //             image.textContent = doc.data().image;
-    //             description.textContent = doc.data().description;
-    //             li.appendChild(space);
-    //             li.appendChild(name);
-    //             li.appendChild(email);
-    //             li.appendChild(phone);
-    //             // li.appendChild(image);
-    //             li.appendChild(description);
-    //             // photolist.appendChild(li);
-    //             photolist1.appendChild(li)
-    //             // this.setState({ data: doc.data() })
-    //         });
-
-    //     });
-
-
-    // }
-    // renderPhotos = (doc) => {
-    //     const photolist = document.querySelector('#photoList');
-    //     let li = document.createElement('li');
-    //     let name = document.createElement('span');
-    //     li.setAttribute('data-id', doc.id);
-    //     name.textContent = doc.data().name;
-    //     li.appendChild(name);
-    //     photolist.appendChild(li);
-
-    // }
 
     render() {
         const db = fire.firestore();
@@ -93,53 +46,55 @@ class Home extends Component {
                 let name = document.createElement('div');
                 let condition = document.createElement('div');
                 let price = document.createElement('div');
-                let location = document.createElement('div');
-                let email = document.createElement('div');
-                let phone = document.createElement('div');
+                let location = document.createElement('span');
+                let email = document.createElement('span');
+                let phone = document.createElement('span');
                 let image = document.createElement('a');
                 let description = document.createElement('div');
                 li.setAttribute('data-id', doc.id);
                 space.textContent = doc.data().space;
-                name.textContent = "Item Name=> " + doc.data().name;
-                condition.textContent = "Item condition=> " + doc.data().condition;
-                price.textContent = "Item price=> " + doc.data().price;
-                location.textContent = "Item Location=> " + doc.data().location;
-                email.textContent = "Seller's email=> " + doc.data().email;
-                phone.textContent = "Seller's Phone number=> " + doc.data().phone_number;
+                name.textContent = doc.data().name;
+                condition.textContent = "Current condition: " + doc.data().condition;
+                price.textContent = "Expected price: " + doc.data().price;
+                location.textContent = "Location: " + doc.data().location;
+                email.textContent = "Seller's email: " + doc.data().email;
+                phone.textContent = "Seller's Phone number: " + doc.data().phone_number;
                 image.textContent = doc.data().image;
                 description.textContent = doc.data().description;
-                li.appendChild(space);
-                li.appendChild(name);
-                li.appendChild(condition);
-                li.appendChild(price);
-                li.appendChild(location);
-                li.appendChild(email);
-                li.appendChild(phone);
+                // li.appendChild(space);
+                // li.appendChild(name);
+                // li.appendChild(location);
+                // li.appendChild(condition);
+                // li.appendChild(email);
+                // li.appendChild(price);
+                // li.appendChild(phone);
                 // var a = document.createElement('a');
                 // var linkText = document.createTextNode("item photo");
                 // a.appendChild(linkText);
                 // a.title = "item photo";
                 // a.href = doc.data().image;
                 // li.appendChild(a);
-                li.appendChild(space);
-                li.appendChild(space);
+
+
                 var img = document.createElement('img');
                 var linkText = document.createTextNode("item photo");
                 img.appendChild(linkText);
                 img.title = "item photo";
                 img.src = doc.data().image;
-                img.height = 320;
-                img.width = 250;
+
+                img.height = 350;
+                img.width = 320;
+                li.appendChild(space);
+                li.appendChild(space);
                 li.appendChild(img);
-
                 li.appendChild(name);
-                li.appendChild(condition);
-                li.appendChild(price);
                 li.appendChild(location);
+                li.appendChild(condition);
                 li.appendChild(email);
+                li.appendChild(price);
                 li.appendChild(phone);
-
                 li.appendChild(description);
+
                 if (document.querySelector('#photosData')) { photolist1.appendChild(li) }
 
                 // photolist.appendChild(li);
