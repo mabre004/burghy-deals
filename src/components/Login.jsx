@@ -47,8 +47,8 @@ const Login = ({ history }) => {
             {/* <h1>Log in</h1> */}
             <form onSubmit={loginUser}>
                 <header className="App-header">
-                    <p1>Welcome to </p1>
-                    <p1>BurghyDeals</p1>
+                    <p1 style={{ color: "rgb(223, 138, 109)" }}> Welcome to </p1>
+                    <p1 style={{ color: "rgb(223, 138, 109)" }}>BurghyDeals</p1>
                     <div className="LoginBox">
                         <div className="Email">
 
@@ -65,7 +65,11 @@ const Login = ({ history }) => {
                                 placeholder="Enter your password" />
                         </div>
                         <button type="submit">Log in</button>
-                        <button onClick={() => history.push("/register")} label="Action">Create an account</button>
+                        <button onClick={() => history.push("/register")}
+                            label="Action" style={{
+                                height: "50px"
+
+                            }}>Create an account</button>
 
                     </div>
                 </header>

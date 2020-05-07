@@ -6,7 +6,7 @@ import Login from "./components/Login";
 import SignUp from "./components/Register";
 import Sell from "./components/Sell";
 import { AuthProvider } from "./config/Auth";
-
+import PrivateRoute from "./PrivateRoute";
 
 class App extends Component {
     render() {
@@ -14,12 +14,12 @@ class App extends Component {
             <AuthProvider>
                 <Router>
                     <div>
-                        <Route exact path="/" component={Login} />
+                        <Route exact path="/" component={Home} />
                         <Route path="/login" component={Login} />
                         <Route path="/register" component={SignUp} />
                         <Route path="/signup" component={SignUp} />
                         <Route path="/home" component={Home} />
-                        <Route path="/sell" component={Sell} />
+                        <PrivateRoute Route path="/sell" component={Sell} />
                     </div>
                 </Router>
             </AuthProvider>
