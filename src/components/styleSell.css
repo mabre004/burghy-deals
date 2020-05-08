@@ -1,16 +1,25 @@
-App{
+/* App{
     text-align: center;
    
-}
+} */
 .App-header{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: baseline; 
+    /* justify-content: center; */
     font-size: calc(10px + 2vmin);
     color: white;
 }
+input{
+    height: 30px;
+    width: 300px;
+    border-radius: 30px;
+    border-color: #282c34;
+    
+    font-size: small;
+    margin-left: 30px;
+}  
 p1{
     font-size: 50px;
     font-family: Didot, serif;
@@ -23,13 +32,6 @@ p1{
     
 }
 
- /* .Email{
-    text-align: left;
-    flex-direction: column;
-} */
-.Password{
-    margin-top: 20px;
-} 
 button{
     height: 40px;
     width: 120px;
@@ -43,7 +45,3 @@ button{
                         
 }
 
-input{
-    padding: 20;
-    
-}

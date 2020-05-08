@@ -7,7 +7,7 @@ import "./styleReg.css";
 import { withRouter, Redirect } from "react-router";
 import fireBase from "../config/fire";
 import { AuthContext } from "../config/Auth";
-
+import logo_burghy from "./logo_burghy1.png";
 
 // eslint-disable-next-line react/prop-types
 const Register = ({ history }) => {
@@ -40,27 +40,28 @@ const Register = ({ history }) => {
       backgroundSize: "cover"
 
     }}>
+      <img src={logo_burghy} alt="logo" class="logo" />
       {/* <h1>Log in</h1> */}
       <form onSubmit={signUpUser}>
-        <header className="App-header">
-          <p1>Welcome to </p1>
-          <p1>BurghyDeals</p1>
+        <header className="AppHeader">
+          <p1 style={{ color: "#80d0c7" }}>Welcome to </p1>
+          <p1 style={{ color: "#80d0c7" }}>BurghyDeals</p1>
           <div className="LoginBox">
             <div className="Email">
 
-              <input
+              <input style={{ height: "40px", width: "470px" }}
                 name="email"
                 type="email"
-                placeholder="Enter your SUNY Plattsburgh email" />
+                placeholder="Enter your email" />
             </div>
             <div className="Password" >
 
-              <input
+              <input style={{ height: "40px", width: "470px" }}
                 name="password"
                 type="password"
                 placeholder="Enter your password" />
             </div>
-            <button type="submit">Create account</button>
+            <button style={{ height: "50px" }} type="submit">Create account</button>
             <button style={{ width: "300px" }} onClick={() => history.push("/login")} label="Action">Already have an account? LogIn</button>
 
 

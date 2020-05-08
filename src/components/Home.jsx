@@ -107,14 +107,20 @@ class Home extends Component {
 
         return (
             <div>
-                <h1>Welcome Home</h1>
 
                 <div className="container">
+
+
                     <div className="nav">
+
                         <div className="nav-side">
+
                             <span class="open-slide">
+
                                 <a href="." onclick="openSlideMenu()">
+
                                     <svg width="30" height="30">
+
                                         <path d="M0,5 30,5" stroke="#000" stroke-width="5" />
                                         <path d="M0,14 30,14" stroke="#000" stroke-width="5" />
                                         <path d="M0,23 30,23" stroke="#000" stroke-width="5" />
@@ -122,6 +128,15 @@ class Home extends Component {
                                 </a>
                             </span>
                         </div>
+                        {/* <button onClick={this.logout}
+                            style={{ marginLeft: "1200px" }}
+                            label="Action"> logout </button>
+
+                        <button onClick={this.sellPage}
+                            style={{ marginLeft: "1200px" }}
+                            label="Action"> Sellpage </button>
+                        {this.state.redirect ? <Redirect to={this.state.redirect} /> : null} */}
+
                         <img src={logo_burghy} alt="logo" class="logo" />
                         <ul>
                             <li>
@@ -136,6 +151,15 @@ class Home extends Component {
                             <li>
                                 <a href=".">Contact</a>
                             </li>
+                            <li>
+                                <a onClick={this.sellPage}>SellPage</a>
+                                {this.state.redirect ? <Redirect to={this.state.redirect} /> : null}
+
+                            </li>
+                            <li>
+                                <a href="/login" onClick={this.logout}>Logout</a>
+                            </li>
+
                         </ul>
                     </div>
                     <div>
@@ -150,14 +174,15 @@ class Home extends Component {
                         {/* {this.state.data} */}
 
                     </div>
-                    {/* <button onClick={this.onLoad}>Load Data</button> */}
-                    <button onClick={this.logout}
+                    {/* <button onClick={this.logout}
                         style={{ marginLeft: "1200px" }}
                         label="Action"> logout </button>
+
                     <button onClick={this.sellPage}
                         style={{ marginLeft: "1200px" }}
                         label="Action"> Sellpage </button>
-                    {this.state.redirect ? <Redirect to={this.state.redirect} /> : null}
+                    {this.state.redirect ? <Redirect to={this.state.redirect} /> : null} */} */}
+
                 </div>
 
             </div >

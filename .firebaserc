@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "signup-burghy"
+    "default": "signup-burghy",
+    "na": "burghydeals-71334",
+    "delpoy": "burghydeals-71334"
   }
 }

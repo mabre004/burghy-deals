@@ -2,7 +2,7 @@ App{
     text-align: center;
    
 }
-.App-header{
+.Appheader{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -52,12 +52,11 @@ button{
                         
 }
 
-input{
-    height: 50px;
+/* input{
+    height: 40px;
     width: 500px;
     border-radius: 40px;
     border-color: #282c34;
-    height: "50px";
-    font-size: medium;
     
-}
+    
+} */

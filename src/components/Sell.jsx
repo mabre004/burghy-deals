@@ -4,7 +4,7 @@ import storage from "../config/fire";
 import firebase from "firebase";
 import { withRouter, Redirect } from "react-router-dom";
 import "./styleSell.css";
-
+import logo_burghy from "./logo_burghy1.png";
 class Sell extends Component {
     state = {
         displayHandle: false,
@@ -12,7 +12,7 @@ class Sell extends Component {
         image: '',
 
         name: "",
-        number: null,
+        number: "",
         email: "",
         description: "",
         space: "",
@@ -74,17 +74,18 @@ class Sell extends Component {
     render() {
         return (
             <div className="App" style={{
-                backgroundColor: "grey",
+                backgroundColor: "#80d0c7",
             }}>
+
                 <div className="App-header">
-                    <p1>Sell Page </p1>
+                    <div>
+                        <img src={logo_burghy} alt="logo" class="logo" />
+                    </div>
+                    <p1>Sell Here </p1>
 
                     <div className="Photo">
-                        <h6>
-                            Choose the photo of your deal
-                    </h6>
 
-                        <input style={{ borderRadius: "0px" }}
+                        <input style={{ borderRadius: "0px", marginRight: "30" }}
                             // value={this.state.image}
                             type="file"
                             id="photo"
@@ -95,93 +96,98 @@ class Sell extends Component {
                             <button onClick={this.handleClick}> uploadImage</button>
                         </span>
                     </div>
-                    <div className="name">
-                        <input
-                            value={this.state.name}
-                            name="name"
-                            type="text"
-                            placeholder="Enter the name of your item"
+                    <div className="inputs">
+                        <div className="Title">
+                            <input
+                                value={this.state.name}
+                                name="name"
+                                type="text"
+                                placeholder="Enter the title of your item"
 
-                            onChange={(event) => {
-                                this.setState({
-                                    name: event.target.value
-                                })
-                            }}
+                                onChange={(event) => {
+                                    this.setState({
+                                        name: event.target.value
+                                    })
+                                }}
 
-                        />
-                    </div>
+                            />
+                        </div>.
+
                     <div className="condition">
-                        <input
-                            value={this.state.condition}
-                            name="condition"
-                            type="text"
-                            placeholder="Condition"
+                            <input
+                                value={this.state.condition}
+                                name="condition"
+                                type="text"
+                                placeholder="Condition"
 
-                            onChange={(event) => {
-                                this.setState({
-                                    condition: event.target.value
-                                })
-                            }}
+                                onChange={(event) => {
+                                    this.setState({
+                                        condition: event.target.value
+                                    })
+                                }}
 
-                        />
-                    </div>
+                            />
+                        </div>
+                    .
                     <div className="price">
-                        <input
-                            value={this.state.Price}
-                            name="price"
-                            type="number"
-                            placeholder="Price"
+                            <input
+                                value={this.state.Price}
+                                name="price"
+                                type="number"
+                                placeholder="Price"
 
-                            onChange={(event) => {
-                                this.setState({
-                                    price: event.target.value
-                                })
-                            }}
+                                onChange={(event) => {
+                                    this.setState({
+                                        price: event.target.value
+                                    })
+                                }}
 
-                        />
-                    </div>
-                    <div className="location">
-                        <input
-                            value={this.state.Location}
-                            name="location"
-                            type="text"
-                            placeholder="Location on campus"
+                            />
+                        </div>.
+                        <div className="location">
+                            <input
+                                value={this.state.Location}
+                                name="location"
+                                type="text"
+                                placeholder="Location on campus"
 
-                            onChange={(event) => {
-                                this.setState({
-                                    location: event.target.value
-                                })
-                            }}
+                                onChange={(event) => {
+                                    this.setState({
+                                        location: event.target.value
+                                    })
+                                }}
 
-                        />
-                    </div>
+                            />
+                        </div>.
+
                     <div className="Phone">
-                        <input
-                            value={this.state.number}
-                            name="phone"
-                            type="tel"
-                            placeholder="Enter a number for buyers to reach you"
-                            onChange={(event) => {
-                                this.setState({
-                                    number: event.target.value
-                                })
-                            }}
-                        />
-                    </div>
+                            <input
+                                value={this.state.number}
+                                name="phone"
+                                type="tel"
+                                placeholder="Enter a number for buyers to reach you"
+                                onChange={(event) => {
+                                    this.setState({
+                                        number: event.target.value
+                                    })
+                                }}
+                            />
+                        </div>.
+
                     <div className="Email">
-                        <input
-                            value={this.state.email}
-                            name="email"
-                            type="email"
-                            placeholder="Enter your email for buyers to reach you"
-                            onChange={(event) => {
-                                this.setState({
-                                    email: event.target.value
-                                })
-                            }}
-                        />
-                    </div>
-                    <div className="Description">
+                            <input
+                                value={this.state.email}
+                                name="email"
+                                type="email"
+                                placeholder="Enter your email for buyers to reach you"
+                                onChange={(event) => {
+                                    this.setState({
+                                        email: event.target.value
+                                    })
+                                }}
+                            />
+                        </div>
+                        {/* <div className="Description">
                         <input
                             style={{ height: "100px", width: "900px" }}
                             value={this.state.description}
@@ -195,6 +201,7 @@ class Sell extends Component {
                                 })
                             }}
                         />
+                    </div> */}
                     </div>
                     <div>
 

@@ -4,12 +4,12 @@
 import React, { useCallback, useContext, Component } from "react";
 export { Login } from "./Login";
 import hands from "./hand.png";
-import "./styleLogin.css";
+import logo_burghy from "./logo_burghy1.png";
 // import home from "./Home";
 import { withRouter, Redirect } from "react-router";
 import fireBase from "../config/fire";
 import { AuthContext } from "../config/Auth";
-
+import "./styleLogin.css";
 
 // eslint-disable-next-line react/prop-types
 const Login = ({ history }) => {
@@ -44,22 +44,24 @@ const Login = ({ history }) => {
             // backgroundSize: "cover"
 
         }}>
+            <img src={logo_burghy} alt="logo" class="logo" />
+
             {/* <h1>Log in</h1> */}
             <form onSubmit={loginUser}>
-                <header className="App-header">
-                    <p1 style={{ color: "rgb(223, 138, 109)" }}> Welcome to </p1>
-                    <p1 style={{ color: "rgb(223, 138, 109)" }}>BurghyDeals</p1>
+                <header className="Appheader">
+                    <p1 style={{ color: "#80d0c7" }}> Welcome to </p1>
+                    <p1 style={{ color: "#80d0c7" }}>BurghyDeals</p1>
                     <div className="LoginBox">
                         <div className="Email">
 
-                            <input
+                            <input style={{ height: "40px", width: "470px" }}
                                 name="email"
                                 type="email"
-                                placeholder="Enter your SUNY Plattsburgh email" />
+                                placeholder="Login with your email" />
                         </div>
                         <div className="Password" >
 
-                            <input
+                            <input style={{ height: "40px", width: "470px" }}
                                 name="password"
                                 type="password"
                                 placeholder="Enter your password" />
