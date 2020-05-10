@@ -34,14 +34,14 @@ class Home extends Component {
 
     render() {
         const db = fire.firestore();
-        db.collection("photos").get().then(function (querySnapshot) {
+        db.collection("users").get().then(function (querySnapshot) {
             querySnapshot.forEach(function (doc) {
                 // doc.data() is never undefined for query doc snapshots
                 console.log(doc.id, " => ", doc.data());
                 const photolist = document.querySelector('#photoList');
                 const photolist1 = document.querySelector('#photosData');
                 let li = document.createElement('li');
-
+                let span = document.createElement('span');
                 let space = document.createElement('div');
                 let name = document.createElement('div');
                 let condition = document.createElement('div');
@@ -94,8 +94,8 @@ class Home extends Component {
                 li.appendChild(price);
                 li.appendChild(phone);
                 li.appendChild(description);
-
-                if (document.querySelector('#photosData')) { photolist1.appendChild(li) }
+                span.appendChild(li)
+                if (document.querySelector('#photosData')) { photolist1.appendChild(span) }
 
                 // photolist.appendChild(li);
 
@@ -163,7 +163,7 @@ class Home extends Component {
                         </ul>
                     </div>
                     <div>
-                        <div id={"photoList"}>UI Data</div>
+                        {/* <div id={"photoList"}>UI Data</div> */}
                         <div style={{
                             fontFamily: "Times New Roman",
                             fontSize: "28px",
@@ -181,7 +181,7 @@ class Home extends Component {
                     <button onClick={this.sellPage}
                         style={{ marginLeft: "1200px" }}
                         label="Action"> Sellpage </button>
-                    {this.state.redirect ? <Redirect to={this.state.redirect} /> : null} */} */}
+                    {this.state.redirect ? <Redirect to={this.state.redirect} /> : null} */}
 
                 </div>
 

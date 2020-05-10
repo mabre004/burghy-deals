@@ -45,7 +45,7 @@ class Sell extends Component {
 
         const db = firebase.firestore()
         // db.collection("photos").doc("firstPhoto").set({
-        db.collection("photos").doc().set({
+        db.collection("users").doc().set({
             space: this.state.space,
             name: this.state.name,
             phone_number: this.state.number,
