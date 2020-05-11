@@ -4,10 +4,7 @@
     min-height: 100%;
     min-width: 1024px;
     display: block;
-    width: 100%;
-    margin: 0 auto;
-  
-    position: static;
+    position:static;
     top: 0;
     left: 0;
     font-family: "Work Sans", sans-serif;

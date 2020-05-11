@@ -41,7 +41,7 @@ class Home extends Component {
                 const photolist = document.querySelector('#photoList');
                 const photolist1 = document.querySelector('#photosData');
                 let li = document.createElement('li');
-                let span = document.createElement('span');
+                let span = document.createElement('a');
                 let space = document.createElement('div');
                 let name = document.createElement('div');
                 let condition = document.createElement('div');
@@ -95,6 +95,7 @@ class Home extends Component {
                 li.appendChild(phone);
                 li.appendChild(description);
                 span.appendChild(li)
+
                 if (document.querySelector('#photosData')) { photolist1.appendChild(span) }
 
                 // photolist.appendChild(li);
@@ -165,6 +166,17 @@ class Home extends Component {
                     <div>
                         {/* <div id={"photoList"}>UI Data</div> */}
                         <div style={{
+                            // textAlign: "center",
+                            display: "inline-flex",
+                            flexWrap: "wrap",
+                            WebkitBoxOrient: "horizontal",
+                            WebkitBoxDirection: "normal",
+                            flexDirection: "row",
+                            maxWidth: "1200px",
+                            margin: "0 auto",
+                            justifyContent: "space-between",
+                            WebkitBoxAlign: "end",
+                            alignItems: "flex-end",
                             fontFamily: "Times New Roman",
                             fontSize: "28px",
                             marginLeft: "50px",
