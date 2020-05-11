@@ -30,7 +30,7 @@ export const StyledMenu = styled.nav`
       text-align: center;
     }
     &:hover {
-      color: ${({ theme }) => theme.red};
+      color: ${({ theme }) => theme.primaryHover};
     }
   }
 `;

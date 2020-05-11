@@ -32,17 +32,21 @@ exports.addusersToAlgolia = functions.firestore
 exports.editusersToAlgolia = functions.firestore
   .document("users/{user_id}")
   .onUpdate((event) => {
-    console.log("edit event", event.data.data());
-    const active = event.data().active === true ? "true" : "false";
+    const objectID = event.after.data().id;
+    console.log("edit event", event);
+    console.log("okay");
+    const active = event.after.data().active === true ? "true" : "false";
+    console.log("pass");
+
     const data = {
       //user_id: event.data().user_id,
-      objectID: event.data().user_id,
-      condition: event.data().condition,
-      description: event.data().description,
-      location: event.data().location,
-      name: event.data().name,
-      phone_number: event.data().phone_number,
-      price: event.data().price,
+      objectID: event.after.data().user_id,
+      condition: event.after.data().condition,
+      description: event.after.data().description,
+      location: event.after.data().location,
+      name: event.after.data().name,
+      phone_number: event.after.data().phone_number,
+      price: event.after.data().price,
     };
     console.log("DATA in is", data);
     return editToAlgolia(data, "users")
