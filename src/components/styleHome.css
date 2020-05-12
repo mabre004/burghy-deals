@@ -3,7 +3,7 @@
     background-color:#ebedee;
     min-height: 100%;
     min-width: 1024px;
-    display: block;
+    /* display: block; */
     position:static;
     top: 0;
     left: 0;
@@ -19,8 +19,11 @@
     background-color:  #f5efef;
     background-size: auto;
     border-bottom: 1px solid #ccc;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #ccc; 
+    position: fixed;
+    
   }
+ 
   
   .nav ul {
     float: left;

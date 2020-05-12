@@ -96,7 +96,7 @@ class Home extends Component {
                 li.appendChild(description);
                 span.appendChild(li)
 
-                if (document.querySelector('#photosData')) { photolist1.appendChild(span) }
+                if (document.querySelector('#photosData')) { photolist1.appendChild(li) }
 
                 // photolist.appendChild(li);
 
@@ -107,29 +107,29 @@ class Home extends Component {
 
 
         return (
-            <div>
-
-                <div className="container">
 
 
-                    <div className="nav">
+            <div className="container">
 
-                        <div className="nav-side">
 
-                            <span class="open-slide">
+                <div className="nav">
 
-                                <a href="." onclick="openSlideMenu()">
+                    <div className="nav-side">
 
-                                    <svg width="30" height="30">
+                        <span class="open-slide">
 
-                                        <path d="M0,5 30,5" stroke="#000" stroke-width="5" />
-                                        <path d="M0,14 30,14" stroke="#000" stroke-width="5" />
-                                        <path d="M0,23 30,23" stroke="#000" stroke-width="5" />
-                                    </svg>
-                                </a>
-                            </span>
-                        </div>
-                        {/* <button onClick={this.logout}
+                            <a href="." onclick="openSlideMenu()">
+
+                                <svg width="30" height="30">
+
+                                    <path d="M0,5 30,5" stroke="#000" stroke-width="5" />
+                                    <path d="M0,14 30,14" stroke="#000" stroke-width="5" />
+                                    <path d="M0,23 30,23" stroke="#000" stroke-width="5" />
+                                </svg>
+                            </a>
+                        </span>
+                    </div>
+                    {/* <button onClick={this.logout}
                             style={{ marginLeft: "1200px" }}
                             label="Action"> logout </button>
 
@@ -138,55 +138,60 @@ class Home extends Component {
                             label="Action"> Sellpage </button>
                         {this.state.redirect ? <Redirect to={this.state.redirect} /> : null} */}
 
-                        <img src={logo_burghy} alt="logo" class="logo" />
-                        <ul>
-                            <li>
-                                <a href=".">Home</a>
-                            </li>
-                            <li>
-                                <a href=".">About</a>
-                            </li>
-                            <li>
-                                <a href=".">FAQ</a>
-                            </li>
-                            <li>
-                                <a href=".">Contact</a>
-                            </li>
-                            <li>
-                                <a onClick={this.sellPage}>SellPage</a>
-                                {this.state.redirect ? <Redirect to={this.state.redirect} /> : null}
+                    <img src={logo_burghy} alt="logo" class="logo" />
+                    <ul>
+                        <li>
+                            <a href=".">Home</a>
+                        </li>
+                        <li>
+                            <a href=".">About</a>
+                        </li>
+                        <li>
+                            <a href=".">FAQ</a>
+                        </li>
+                        <li>
+                            <a href=".">Contact</a>
+                        </li>
+                        <li>
+                            <a onClick={this.sellPage}>SellPage</a>
+                            {this.state.redirect ? <Redirect to={this.state.redirect} /> : null}
 
-                            </li>
-                            <li>
-                                <a href="/login" onClick={this.logout}>Logout</a>
-                            </li>
+                        </li>
+                        <li>
+                            <a href="/login" onClick={this.logout}>Logout</a>
+                        </li>
+                        <li>
+                            <input type="text" placeholder="Search.."></input>
+                        </li>
+                    </ul>
+                </div>
 
-                        </ul>
-                    </div>
-                    <div>
-                        {/* <div id={"photoList"}>UI Data</div> */}
-                        <div style={{
-                            // textAlign: "center",
-                            display: "inline-flex",
-                            flexWrap: "wrap",
-                            WebkitBoxOrient: "horizontal",
-                            WebkitBoxDirection: "normal",
-                            flexDirection: "row",
-                            maxWidth: "1200px",
-                            margin: "0 auto",
-                            justifyContent: "space-between",
-                            WebkitBoxAlign: "end",
-                            alignItems: "flex-end",
-                            fontFamily: "Times New Roman",
-                            fontSize: "28px",
-                            marginLeft: "50px",
-                            wordSpacing: "5px"
+                <div className="items">
 
-                        }} id={"photosData"}></div>
-                        {/* {this.state.data} */}
+                    {/* <div id={"photoList"}>UI Data</div> */}
+                    <div style={{
+                        // textAlign: "center",
+                        display: "inline-flex",
+                        flexWrap: "wrap",
+                        WebkitBoxOrient: "horizontal",
+                        WebkitBoxDirection: "normal",
+                        flexDirection: "row",
+                        maxWidth: "1200px",
+                        margin: "0 auto",
+                        justifyContent: "space-between",
+                        WebkitBoxAlign: "end",
+                        alignItems: "flex-end",
+                        fontFamily: "Times New Roman",
+                        fontSize: "28px",
+                        marginLeft: "50px",
+                        marginTop: "110px",
+                        wordSpacing: "5px"
 
-                    </div>
-                    {/* <button onClick={this.logout}
+                    }} id={"photosData"}></div>
+                    {/* {this.state.data} */}
+
+                </div>
+                {/* <button onClick={this.logout}
                         style={{ marginLeft: "1200px" }}
                         label="Action"> logout </button>
 
@@ -195,9 +200,9 @@ class Home extends Component {
                         label="Action"> Sellpage </button>
                     {this.state.redirect ? <Redirect to={this.state.redirect} /> : null} */}
 
-                </div>
+            </div>
 
-            </div >
+
 
 
         );
