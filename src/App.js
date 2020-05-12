@@ -22,7 +22,7 @@ function App() {
   const menuId = "main-menu";
   const searchClient = algoliasearch(
     "JT7M5SMQEI",
-    "9c02bdf5c366050a28c6c29fbf3e94e6"
+    "7af6ca3d6725b3a7428497b1df197080"
   );
 
   useOnClickOutside(node, () => setOpen(false));
@@ -37,31 +37,28 @@ function App() {
               <Burger open={open} setOpen={setOpen} aria-controls={menuId} />
               <Menu open={open} setOpen={setOpen} id={menuId} />
             </FocusLock>
-            {/* <header className="header"> */}
-            <div className="container">
-              <InstantSearch searchClient={searchClient} indexName="user">
-                {/* <div className="search-panel">
-              <div className="search-panel__filters">
-                <RefinementList attribute="brand" />
-              </div> */}
-                <SearchBox
-                  className="searchbox"
-                  translations={{
-                    placeholder: "Search BurghyDeals",
-                  }}
-                />
-                <Hits hitComponent={Hit} />
-
-                <div className="pagination">
-                  <Pagination />
-                </div>
-              </InstantSearch>
-            </div>
-            {/* </header> */}
           </div>
           <div></div>
         </>
       </ThemeProvider>
+
+      <div className="container">
+        <InstantSearch searchClient={searchClient} indexName="users">
+          <div className="search-panel">
+            <SearchBox
+              className="searchbox"
+              translations={{
+                placeholder: "",
+              }}
+            />
+            <Hits hitComponent={Hit} />
+
+            <div className="pagination">
+              <Pagination />
+            </div>
+          </div>
+        </InstantSearch>
+      </div>
     </Fragment>
   );
 }
@@ -69,7 +66,7 @@ function Hit(props) {
   return (
     <article>
       <h1>
-        <Highlight attribute="name" hit={props.hit} />
+        <Highlight attribute="description" hit={props.hit} />
       </h1>
       <p>
         <Highlight attribute="description" hit={props.hit} />

@@ -33,37 +33,31 @@ em {
 }
 
 .container {
-  position: relative;
-  left: 20%;
-  top: 25%;
-  width: 30%;
+  position: absolute;
+  top: 5%;
+  /* width: 100%; */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
 }
 
-.search-panel {
+/* .search-panel {
   display: flex;
-}
-
+} */
+/* 
 .search-panel__filters {
   flex: 1;
 }
 
 .search-panel__results {
   flex: 3;
-}
+} */
 
 .searchbox {
   margin-bottom: 2rem;
-  position: relative;
-  left: 20%;
-  top: 25%;
-  width: 30%;
 }
 
 .pagination {
   margin: 2rem auto;
   text-align: center;
-  position: relative;
-  left: 20%;
-  top: 25%;
-  width: 30%;
 }
