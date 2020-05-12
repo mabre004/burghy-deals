@@ -29,6 +29,45 @@ class Home extends Component {
         })
 
     }
+    // goTop = (query, findFirst) => {
+    //     if (window.document.location.href = '#') {
+    //         if (findFirst) {
+    //             window.find(query, 0, 0, 1);
+    //         }
+    //     }
+    // }
+    checkInput = () => {
+        var query = document.getElementById('search').value;
+        window.find(query);
+        document.designMode = "on";
+        var sel = window.getSelection();
+        sel.collapse(document.body, 0);
+        while (window.find(query)) {
+            document.execCommand("HiliteColor", false, "yellow");
+            sel.collapseToEnd();
+        }
+        document.designMode = "off";
+        // this.goTop(query, 1)
+    }
+    removeHighLight = () => {
+        var query = document.getElementById('search').value;
+        document.designMode = "on";
+        var sel = window.getSelection();
+        sel.collapse(document.body, 0);
+        while (window.find(query)) {
+            document.execCommand("HiliteColor", false, "transparent");
+            sel.collapseToEnd();
+        }
+        document.designMode = "off";
+
+        // this.goTop(query, 0)
+    }
+
+
+
+
+
+
 
 
 
@@ -153,7 +192,7 @@ class Home extends Component {
                             <a href=".">Contact</a>
                         </li>
                         <li>
-                            <a onClick={this.sellPage}>SellPage</a>
+                            <a onClick={this.sellPage} style={{ cursor: "pointer" }}>SellPage</a>
                             {this.state.redirect ? <Redirect to={this.state.redirect} /> : null}
 
                         </li>
@@ -161,7 +200,8 @@ class Home extends Component {
                             <a href="/login" onClick={this.logout}>Logout</a>
                         </li>
                         <li>
-                            <input type="text" placeholder="search.."></input>
+                            <input type="text" id="search" placeholder="search.."></input>
+                            <a type="submit" style={{ width: "50px", backgroundColor: "#3BB9FF", fontSize: "medium", cursor: "pointer" }} onClick={this.checkInput}>SEARCH</a>
                         </li>
                     </ul>
                 </div>
