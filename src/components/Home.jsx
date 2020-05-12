@@ -161,7 +161,7 @@ class Home extends Component {
                             <a href="/login" onClick={this.logout}>Logout</a>
                         </li>
                         <li>
-                            <input type="text" placeholder="Search.."></input>
+                            <input type="text" placeholder="search.."></input>
                         </li>
                     </ul>
                 </div>
