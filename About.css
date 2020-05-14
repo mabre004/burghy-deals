@@ -85,28 +85,6 @@ html {
 
 
 
-nav {
-    border-bottom: 1px solid black;
-}
-
-.crumbs ol {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.crumb {
-    display: inline-block;
-}
-
-.crumb a::after {
-    display: inline-block;
-    color: #000;
-    content: '>';
-    font-size: 80%;
-    font-weight: bold;
-    padding: 0 3px;
-}
-
 .navbar{
     width: 20%;
     margin: 0 auto;
@@ -124,6 +102,9 @@ header::after {
 
 .logo{
     float:left;
+    padding-top: 15px;
+    margin-top: 10px;
+    padding-right: 20px;
     }
 
 
@@ -140,5 +121,37 @@ nav ul{
 nav li{
     display: inline-block;
     margin-left: 70px;
-    padding-bottom: 15px;
+    padding-bottom: 23px;
+
+    position: relative;
+}
+
+nav a{
+    color:white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: Castellar;
+    font-weight: 400;
+}
+
+nav a:hover{
+    color: lightsalmon;
+}
+
+nav a::before{
+    content:"";
+    display: block;
+    height: 5px;
+    background-color: aqua;
+
+    position: absolute;
+    bottom:10px;
+    width: 0%;
+
+    transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before{
+    width: 100%;
 }
