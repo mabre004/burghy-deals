@@ -22,6 +22,12 @@ class Home extends Component {
             redirect: "/login"
         })
     }
+    aboutpage = () => {
+
+        this.setState({
+            redirect: "/ab"
+        })
+    }
     sellPage = () => {
 
         this.setState({
@@ -37,13 +43,14 @@ class Home extends Component {
     //     }
     // }
     checkInput = () => {
+        // window.location.reload();
         var query = document.getElementById('search').value;
         window.find(query);
         document.designMode = "on";
         var sel = window.getSelection();
         sel.collapse(document.body, 0);
         while (window.find(query)) {
-            document.execCommand("HiliteColor", false, "yellow");
+            document.execCommand("HiliteColor", false, "cyan");
             sel.collapseToEnd();
         }
         document.designMode = "off";
@@ -62,14 +69,6 @@ class Home extends Component {
 
         // this.goTop(query, 0)
     }
-
-
-
-
-
-
-
-
 
     render() {
         const db = fire.firestore();
@@ -183,7 +182,7 @@ class Home extends Component {
                             <a href=".">Home</a>
                         </li>
                         <li>
-                            <a href=".">About</a>
+                            <a onClick={this.aboutpage} style={{ cursor: "pointer" }}> About</a>
                         </li>
                         <li>
                             <a href=".">FAQ</a>
@@ -201,7 +200,7 @@ class Home extends Component {
                         </li>
                         <li>
                             <input type="text" id="search" placeholder="search.."></input>
-                            <a type="submit" style={{ width: "50px", backgroundColor: "#3BB9FF", fontSize: "medium", cursor: "pointer" }} onClick={this.checkInput}>SEARCH</a>
+                            <a type="submit" style={{ width: "50px", backgroundColor: "#3BB9FF", fontSize: "medium", cursor: "pointer" }} onClick={this.checkInput} >SEARCH</a>
                         </li>
                     </ul>
                 </div>
@@ -222,7 +221,7 @@ class Home extends Component {
                         WebkitBoxAlign: "end",
                         alignItems: "flex-end",
                         fontFamily: "Times New Roman",
-                        fontSize: "28px",
+                        fontSize: "15px",
                         marginLeft: "50px",
                         marginTop: "110px",
                         wordSpacing: "5px"

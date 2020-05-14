@@ -15,14 +15,21 @@ const Register = ({ history }) => {
     async event => {
       event.preventDefault();
       const { email, password } = event.target.elements;
-      try {
-        await fireBase
-          .auth()
-          .createUserWithEmailAndPassword(email.value, password.value);
-        // eslint-disable-next-line react/prop-types
-        history.push("/");
-      } catch (err) {
-        alert(err);
+
+      var idx = email.value.lastIndexOf("@");
+      if (idx > -1 && email.value.slice(idx + 1) === "plattsburgh.edu") {
+        try {
+          await fireBase
+            .auth()
+            .createUserWithEmailAndPassword(email.value, password.value);
+          // eslint-disable-next-line react/prop-types
+          history.push("/");
+        } catch (err) {
+          alert(err);
+        }
+      }
+      else {
+        window.alert("use ur plattsburgh email")
       }
     },
     [history]

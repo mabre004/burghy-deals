@@ -38,10 +38,10 @@ const Login = ({ history }) => {
 
     return (
         <div className="App" style={{
-            backgroundImage: `url(${hands})`, backgroundPosition: "center",
-            backgroundSize: "cover"
-            // backgroundColor: "gray",
+            // backgroundImage: `url(${hands})`, backgroundPosition: "center",
             // backgroundSize: "cover"
+            backgroundColor: "gray",
+            backgroundSize: "cover"
 
         }}>
             <img src={logo_burghy} alt="logo" class="logo" />
