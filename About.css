@@ -80,5 +80,65 @@ html {
 
 .abtimg{
     border-radius: 50%;
-    margin-bottom:;
+}
+
+
+
+
+nav {
+    border-bottom: 1px solid black;
+}
+
+.crumbs ol {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.crumb {
+    display: inline-block;
+}
+
+.crumb a::after {
+    display: inline-block;
+    color: #000;
+    content: '>';
+    font-size: 80%;
+    font-weight: bold;
+    padding: 0 3px;
+}
+
+.navbar{
+    width: 20%;
+    margin: 0 auto;
+
+}
+
+header{
+    background:black;
+}
+header::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.logo{
+    float:left;
+    }
+
+
+nav{
+    float:right;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li{
+    display: inline-block;
+    margin-left: 70px;
+    padding-bottom: 15px;
 }
